@@ -1,0 +1,22 @@
+
+name: Validate Demo Website
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check website file
+        run: test -f index.html
+
+      - name: Confirm validation
+        run: echo "PASS: index.html exists"
