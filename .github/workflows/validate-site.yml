@@ -1,4 +1,3 @@
-
 name: Validate Demo Website
 
 on:
@@ -13,10 +12,10 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Check website file
         run: test -f index.html
 
       - name: Confirm validation
-        run: echo "PASS: index.html exists"
+        run: 'echo "PASS: index.html exists"'
